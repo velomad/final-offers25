@@ -1,0 +1,32 @@
+{
+  "development": {
+    "username": "ssynvngg_formfiller",
+    "password": "formfiller@123",
+    "database": "ssynvngg_formfiller",
+    "host": "103.108.220.91",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "supportBigNumbers": true
+    }
+  },
+  "test": {
+    "username": "ssynvngg_formfiller",
+    "password": "formfiller@123",
+    "database": "ssynvngg_formfiller",
+    "host": "103.108.220.91",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "supportBigNumbers": true
+    }
+  },
+  "production": {
+    "username": "ssynvngg_formfiller",
+    "password": "formfiller@123",
+    "database": "ssynvngg_formfiller",
+    "host": "103.108.220.91",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "supportBigNumbers": true
+    }
+  }
+}

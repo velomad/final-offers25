@@ -1,0 +1,11 @@
+*** Once added to wallet, can we revert back to payment? ***
+*** what if razorpay succesfully does the transaction but the wallet updation API fails ***
+
+[x] patch steps benefits and infos table.
+[x] Add the razorpay transaction ID to the withdrawals table
+[x] make API to track the user transaction for dashboard
+[*] referral code exist API to be created
+[*] Add expo token  
+[*] Leads API create 
+[*] 10 % earning transfer logic to be crearted for networking section
+[*] Update the level depending upon milestones

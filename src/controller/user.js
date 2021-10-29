@@ -14,24 +14,24 @@ module.exports = {
           {
             model: models.Level,
             as: "level",
-            attributes: ["name", "target", "updatedAt"],
+            attributes: ["name", "target", "updatedAt"]
           },
           {
             model: models.Stat,
             attributes: { exclude: ["id", "userId", "createdAt"] },
-            as: "stats",
+            as: "stats"
           },
           {
             model: models.BankAccountDetail,
             attributes: { exclude: ["id", "userId"] },
-            as: "bankAccountDetails",
+            as: "bankAccountDetails"
           },
           {
             model: models.Wallet,
             attributes: ["balance", "updatedAt"],
-            as: "wallet",
-          },
-        ],
+            as: "wallet"
+          }
+        ]
       });
 
       res.status(200).json({ status: "success", result });
@@ -48,16 +48,16 @@ module.exports = {
           [Op.or]: [
             { uniqueCode: { [Op.like]: "%" + query + "%" } },
             { name: { [Op.like]: "%" + query + "%" } },
-            { email: { [Op.like]: "%" + query + "%" } },
-          ],
+            { email: { [Op.like]: "%" + query + "%" } }
+          ]
         },
-        limit: 10,
+        limit: 10
       });
 
       res.status(200).json({
         status: "success",
         results: result.length,
-        suggestions: result,
+        suggestions: result
       });
     } catch (error) {
       next(error);
@@ -93,15 +93,15 @@ module.exports = {
           {
             model: models.Stat,
             as: "stats",
-            attributes: ["pending", "totalEarnings", "updatedAt"],
+            attributes: ["pending", "totalEarnings", "updatedAt"]
           },
           {
             model: models.Withdrawal,
             as: "withdrawls",
-            attributes: ["amount", "updatedAt"],
-          },
+            attributes: ["amount", "updatedAt"]
+          }
           // { model: models.Earning, as: "earnings" },
-        ],
+        ]
       });
 
       res.status(200).json({ status: "success", user: result });
@@ -121,11 +121,11 @@ module.exports = {
             include: [
               {
                 model: models.Stat,
-                as: "stats",
-              },
-            ],
-          },
-        ],
+                as: "stats"
+              }
+            ]
+          }
+        ]
       });
 
       res.status(200).json({ status: "success", result });
@@ -140,7 +140,7 @@ module.exports = {
     try {
       const result = await models.Lead.create({
         ...body,
-        userId: aud,
+        userId: aud
       });
 
       res.status(201).json({ status: "success", result });
@@ -181,10 +181,10 @@ module.exports = {
       res.status(200).json({
         status: "success",
         message: `expoToken - ${expoToken} added`,
-        result,
+        result
       });
     } catch (error) {
       next(error);
     }
-  },
+  }
 };

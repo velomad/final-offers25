@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      UserNetwork.belongsTo(models.User, { foreignKey: "userId" });
+      UserNetwork.belongsTo(models.User, { foreignKey: "refferedByUserId" });
     }
   }
   UserNetwork.init(
@@ -18,18 +18,18 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
         foreignKey: true,
-        references: { model: "Users", key: "id" },
+        references: { model: "Users", key: "id" }
       },
       refferedByUserId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         foreignKey: true,
-        references: { model: "Users", key: "id" },
-      },
+        references: { model: "Users", key: "id" }
+      }
     },
     {
       sequelize,
-      modelName: "UserNetwork",
+      modelName: "UserNetwork"
     }
   );
   return UserNetwork;

@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Network.belongsTo(models.User, {
         foreignKey: "referralUserId",
-        as: "user",
+        as: "user"
       });
     }
   }
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       uniqueCode: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: false
       },
       referralUserId: {
         type: DataTypes.INTEGER,
@@ -27,13 +27,13 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: true,
         references: {
           model: "Users",
-          key: "id",
-        },
-      },
+          key: "id"
+        }
+      }
     },
     {
       sequelize,
-      modelName: "Network",
+      modelName: "Network"
     }
   );
   return Network;
